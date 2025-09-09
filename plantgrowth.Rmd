@@ -1,0 +1,69 @@
+---
+title: "Plant growth"
+author: "Dulki Nihinsa"
+date: "2025-09-09"
+output: html_document
+---
+
+# Introduction
+
+The PlantGrowth dataset is a built-in dataset in R that contains the weights of plants under three conditions: a control group (ctrl), and two treatment groups (trt1, trt2).
+
+This report explores the dataset, summarizes the plant growth for each group, and compares them visually.
+
+# Results
+
+```{r}
+head(PlantGrowth)
+```
+
+```{r}
+str(PlantGrowth)
+```
+
+## Mean for each group
+
+```{r}
+mean(subset(PlantGrowth, group == "ctrl")$weight)
+```
+
+```{r}
+mean(subset(PlantGrowth, group == "trt1")$weight)
+```
+
+```{r}
+mean(subset(PlantGrowth, group == "trt2")$weight)
+```
+
+## Median for each group
+
+```{r}
+median(subset(PlantGrowth, group == "ctrl")$weight)
+```
+
+```{r}
+median(subset(PlantGrowth, group == "trt1")$weight)
+```
+
+```{r}
+median(subset(PlantGrowth, group == "trt2")$weight)
+```
+
+## Including Plots
+
+```{r}
+boxplot(weight ~ group, data = PlantGrowth,
+        main = "Plant Growth by Treatment Group",
+        xlab = "Group",
+        ylab = "Weight",
+        col = c("lightblue", "lightgreen", "lightpink"))
+```
+
+# Conclusion
+
+From the analysis, the differences in mean and median plant weights across the three groups can be observed. The boxplot provides a clear visual comparison, suggesting that treatment conditions may influence plant growth compared to the control.
+
+```{r}
+sessionInfo()
+```
+
