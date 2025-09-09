@@ -1,0 +1,34 @@
+---
+title: "cars"
+author: "Dulki Nihinsa"
+date: "2025-09-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+data(cars)
+```
+
+## Plot speed (x-axis) against distance (y-axis)
+```{r}
+plot(cars$speed, cars$dist,
+     main = "Speed vs Stopping Distance",
+     xlab = "Speed (mph)",
+     ylab = "Stopping Distance (ft)",
+     col = "blue",
+     pch = 19)
+```
+
+# Interpretation
+
+From the plot, a general trend can be observed: as the speed of the car increases, the stopping distance is also increased. A positive correlation between speed and stopping distance is suggested. The relationship appears to be non-linear, with stopping distances being increased more rapidly at higher speeds.
+
+```{r}
+sessionInfo()
+```
+
+
